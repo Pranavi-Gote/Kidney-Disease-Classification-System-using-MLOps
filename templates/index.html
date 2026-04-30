@@ -9,136 +9,401 @@
         href="data:image/png;base64,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" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<style>
-		body{background-color: #eff2f9;}
-		.iupload h3{color: #1b2d6b;font-size: 30px;font-weight: 700;}
-		.img-part{height:300px;width:300px;margin:0px auto;}
-		.image-part{height:300px;width:300px;border:1px solid #1b2d6b;}
-		.image-part img{position:absolute;height: 300px;width:300px;display:none;padding:5px;}
-		.image-part #video{display:block;height: 300px;width:300px;padding:5px;}
-		.res-part{border:1px solid #dedede;margin-left:20px;height: 310px;width:100%;padding:5px;margin:0px auto;overflow:auto;}
-		.res-part2{border:1px solid #dedede;height: 310px;width:100%;padding:5px;margin:0px auto;}
-		.resp-img{height: 298px;width: 233px;margin:0px auto;}
-		.jsonRes{margin-left:30px;}
-		#send{cursor:pointer;}
-		.btn-part{width:325px;}
-		textarea,
-		select,
-		.form-control,
-		.custom-select,
-		button.btn,
-		.btn-primary,
-		input[type="text"],
-		input[type="url"],
-		.uneditable-input{
-			border: 1px solid #363e75;
-			outline: 0 !important;
-			border-radius:0px;
-			box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -moz-transition: none;
-		   -webkit-transition: none;
-		}
-		textarea:focus,
-		select:focus,
-		.form-control:focus,
-		.btn:focus,
-		.btn-primary:focus,
-		.custom-select:focus,
-		input[type="text"]:focus,
-		.uneditable-input:focus{
-			border: 1px solid #007bff;
-			outline: 0 !important;
-			border-radius:0px;
-			box-shadow: none;
-		   -webkit-box-shadow: none;
-		   -moz-box-shadow: none;
-		   -moz-transition: none;
-		   -webkit-transition: none;
-		}
-		#loading {
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			z-index: 9999999999;
-			overflow: hidden;
-			background: rgba(255, 255, 255, 0.7);
-		}
-		.loader {
-			border: 8px solid #f3f3f3;
-			border-top: 8px solid #363e75;
-			border-radius: 50%;
-			width: 60px;
-			height: 60px;
-			left: 50%;
-			margin-left: -4em;
-			display: block;
-			animation: spin 2s linear infinite;
-		}
-		.loader,
-		.loader:after {display: block;position: absolute;top: 50%;margin-top: -4.05em;}
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-		.right-part{border:1px solid #dedede;padding:5px;}
-		.logo{position:absolute;right:0px;bottom:0px;margin-right:30px;margin-bottom:30px;}
-	</style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: #eef4fb;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-container{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h1{
+    font-size: 52px;
+    color: #0b2c5f;
+    font-weight: 700;
+}
+
+.title p{
+    font-size: 24px;
+    color: #2f5aa8;
+    margin-top: 10px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.left-panel{
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-box{
+    width: 420px;
+    height: 420px;
+    border: 3px solid #1d4e89;
+    border-radius: 18px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.upload-box img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.button-group{
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.btn{
+    border: none;
+    padding: 16px 42px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-btn{
+    background: #1e88ff;
+    color: white;
+}
+
+.predict-btn{
+    background: #17a34a;
+    color: white;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.right-panel{
+    width: 58%;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.result-title{
+    text-align: center;
+    font-size: 42px;
+    color: #0b2c5f;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.result-grid {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.scan-box {
+    width: 320px;
+    height: fit-content;
+    background: #f8fbff;
+    border: 2px solid #dbe7f5;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.box-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0b3a7e;
+    margin-bottom: 20px;
+}
+
+.scan-preview {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 2px solid #dbe7f5;
+    background: white;
+}
+.report-box {
+    flex: 1;
+    max-height: 650px;
+    overflow-y: auto;
+    background: #f8fbff;
+    border: 2px solid #dbe7f5;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.report-box h3 {
+    color: #0b3a7e;
+    font-size: 34px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.prediction-card {
+    background: #ffffff;
+    border: 2px solid #dbe7f5;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.prediction {
+    font-size: 30px;
+    font-weight: 800;
+    color: #008000;
+    margin-bottom: 10px;
+}
+
+.confidence {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d4ed8;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0b3a7e;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+#download-report {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    padding: 18px;
+    background: linear-gradient(135deg, #0b3a7e, #1d4ed8);
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#download-report:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(29,78,216,0.2);
+}
+
+.report-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.report-box::-webkit-scrollbar-thumb {
+    background: #b5c7e8;
+    border-radius: 10px;
+}
+
+.report-box::-webkit-scrollbar-track {
+    background: #eef4fb;
+}
+</style>
 </head>
 <body>
+	<div class="main-container">
+
+    <div class="title">
+        <h1>AI-Powered Kidney Tumor Detection System</h1>
+        <p>Deep Learning Based CT Scan Analysis for Early Detection</p>
+    </div>
+
+    <div class="content">
+
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+
+            <div class="upload-box">
+                <img id="selected-image"
+                     src=""
+                     alt=""
+                     style="display:none;">
+            </div>
+
+            <div class="button-group">
+                <button class="btn upload-btn" id="upload-btn">
+                    Upload
+                </button>
+
+                <button class="btn predict-btn" id="predict-btn">
+                    Predict
+                </button>
+            </div>
+
+            <input type="file"
+                   id="imageUpload"
+                   accept=".png, .jpg, .jpeg"
+                   hidden>
+
+        </div>
+
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <div class="result-title">
+                Prediction Results
+            </div>
+
+            <div class="result-grid">
+
+                <!-- Uploaded Scan -->
+                <div class="scan-box">
+                    <div class="box-title">Uploaded Scan</div>
+
+                    <img id="display-image"
+                         class="scan-preview"
+                         src=""
+                         alt=""
+                         style="display:none;">
+                </div>
+
+
+                <!-- Report Box -->
+                <div class="report-box">
+
+    				<h3>Diagnosis Report</h3>
+
+    				<div id="report-content"></div>
+
+    				<div id="treatment-box"></div>
+
+    				<div id="doctor-box"></div>
+
+    				<a id="download-report" href="#" style="display:none;">
+        				Download Medical Report PDF
+    				</a>
+
+				</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!--
     <div class="main container">
 		<section class="iupload">
-			<h3 class="text-center py-4">Object Classification</h3>
+			<h1>AI-Powered Kidney Tumor Detection System</h1>
+			<p class="subtitle">
+    			Deep Learning Based CT Scan Analysis for Early Detection
+			</p>
 			<div class="row">
 				<div class="img-part col-md-6">
-					<div class="image-part">
-						<video autoplay id="video" poster="https://img.freepik.com/free-vector/group-young-people-posing-photo_52683-18824.jpg?size=338&ext=jpg"></video>
-						<img src="" id="photo">
-						<canvas style="display:none;" id="canvas"></canvas>
-					</div>
-					<div class="btn-part">
-						<form id="upload-data pt-3" class="">
-							<div class="input-group mt-3 row">
-								<button type="button" class="btn btn-primary col-md-5 col-xs-5 ml-3 mr-4" id="uload">Upload</button>
-								<button id="send" type="button" class="btn btn-success col-md-5 col-xs-5">Predict</button>
-							</div>
+					<div class="upload-card">
 
+    				<div class="upload-preview">
+        				<img src="" id="photo">
+    				</div>
 
+    				<div class="button-group">
+        				<button id="upload-btn">Upload</button>
+        				<button id="predict-btn">Predict</button>
+    				</div>
+					<input
+    					type="hidden"
+    					id="url"
+    					value="../predict"
+					/>
 
+					<input
+    					name="upload"
+    					type="file"
+    					id="fileinput"
+    					style="display:none;"
+					/>
 
-
-
-							<!-- change url value  -->
-
-
-
-
-							<input type="hidden" class="form-control mr-2" id="url" placeholder="Enter REST Api url..." value="../predict"/>
-							<input name="upload" type="file" id="fileinput" style="position:absolute;top:-500px;"/><br/>
-						</form>
-					</div>
 				</div>
-				<div class="col-md-6 col-xs-12 right-part">
-					<h5 class="mb-2"><center>Prediction Results</center></h5>
-					<div class="row">
-						<div class="res-part2 col-md-5 col-xs-12"></div>
-						<div class="res-part col-md-5 col-xs-12"><div class="jsonRes"></div></div>
+					
+				</div>
+				<div class="result-card">
+    				<h2>Prediction Results</h2>
+
+    				<div class="result-box">
+        				<div class="result-left">
+            				<p>Uploaded Scan</p>
+            				<img id="result-photo" src="" alt="Uploaded Image">
+        				</div>
+
+        			<div class="result-right">
+            			<p>Diagnosis Report</p>
+						<div id="treatment-box"></div>
+						<div id="doctor-box"></div>
+            		<div class="res-part"></div>
+
+					<div class="download-btn-area">
+    					<a id="downloadReport"
+   							href="#"
+   							style="display:none;"
+   							download="Kidney_Report.pdf">
+   							Download Medical Report PDF
+						</a>
+					</div>
+
+        			</div>
+    			</div>
+				</div>
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
 
-	<img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAAAlCAMAAABBJDpuAAAAVFBMVEX/fgD/iQA7NzIyMjMnNYInNYEnNYInNYEzMzInNYQnNYETJzsnNYIwN1wxMjNoTis4O1YrNm0xOF47PE9DP0dEQEVpTVkAJJ4nNYEOLJHJbiAzMzOmmmHRAAAAFnRSTlOh/vu+986oen9fP2UqEzQkFAIDAAEEILVBJQAAA3FJREFUWMPNmO2WoyAMQG0VBARtdVRs3/89NwkgaF1rd2aOm18tIrnkgwSz7n+R7LcV1ELkeS7E7VySRlyfQXJhTiO55c+liP4cEuH1X8E7gaV+S3Jv2zYZ/Vr+/Sdx2vP6doc/fSPcf/GOpLSFVXFUW8t+giRP47TOd60yk1hbxIhSP0ACKPWrvw7YBIT/lcQY84G3Wk17ugWQfg5UsQJpjflKSLQi7xTWyk0SXTJ4VnB5D1yccxmp4Z+mX5KGNS+SPXVNll0ulyxL0wYmloBB6zL/MpCoAgjAJiUM6w0SboMwPUdRogvNKcNM3smFdRvEcJJkKcflQa+X0pNIfBGW0zKqjyQtw4VLKQlI7ZLgdrRNSZDjMQx2GB4pCkxkCrfGWUTJ0Egan6muCHgJCUwtnCk0mrJ9Q8K5LUqtdSfynkAedhynaRqngVDaXLiJEAzkFkM71IuIlWRYtSQpbXSZDvQ7JPCei9brs+oaABkn74LRIkpFaVxGnzjvIxTYREOoEwn5r01JTDRTcO87Eu3zNUeTPKZpjrIRrNIDCjzALbPk7LJMIokOEQu2K7yKQAKvFDF9pVe0R+LGb7h1MMkw2ijjA/1zhSfSphvEAChXJEhAqwYStIJWXnTpvbdH4hTUwSQ2JRmQpILDLYbB7J41SYiLcNozu5Z3JMo7RxBJahI7WSRByCMkqJt9hySESbVJcvmARJGFExJmdBSl2oM2+T4JLWfgaGFptizlPUm1FydHSdyZ7UnS4ySph2kS0kJrkvr5NJg7dnrJnfxgxPozRPGtkyPNOxtaiDvbIAF9L+5B5zTI2BwlwXmM+U3zReav3o0F8oUEFFZ42McDZYomOUziFmezgWyo251Uc1nyKJol7URCEvIYUEbHYaEGQi9C9egwCdVfHwiaajfjKMUcHcRacCylhWJbJDfq47EEDhYqoIWjHnwDXZPpPiChPQelLU+Cbm4w50FmYgkvFwpiWwCC/Um/SLcNElOC9RVj6qWpCiEMvRUK4zLpdKmPw8rVldy/qxjn60wLrVLWJIPLiZJRr3fsvnOHPvare+lB93tb37T20D82jqOt+zNuXhuNvNhp7X+PpHb3rvV9R5xjE2SpyCN9ffQO+GtWIZr5Xnytz4gTMIRYfys47/uJEXny/aQ/95tSUwmU+uRvSp/IHzQqZYpYrQmxAAAAAElFTkSuQmCC" />
 
 
 <div id="loading"><div class="loader"></div></div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -177,17 +442,43 @@ function sendRequest(base64Data){
 				},
 				data:JSON.stringify({image:base64Data}),
 				success: function(res){
-					$(".res-part").html("");
-					$(".res-part2").html("");
-					try{
-						var imageData = res[1].image;
-						if(imageData.length > 100){
-							if(imageData.length > 10){$(".res-part2").append("<img class='resp-img' src='data:image/jpeg;base64," + imageData + "' alt='' />");}
-						}
-					}catch(e){}
-					$(".res-part").html("<pre>" + JSON.stringify(res[0], undefined, 2) + "</pre>");
-					$("#loading").hide();
-				}
+                    console.log(res);
+                    $(".res-part").html("");
+
+                    // show uploaded image
+                    $('#photo').show();
+
+                    // show prediction result
+                    $(".res-part").html(
+    					"<h3 style='color:green;'>Prediction: " + res.prediction + "</h3>" +
+    					"<h4 style='color:blue;'>Confidence: " + res.confidence + "%</h4>"
+					);
+
+					$("#downloadReport")
+    					.attr("href", res.report_path)
+    					.show();
+
+					let treatmentHTML = "<h3>Treatment Suggestions</h3><ul>";
+
+					res.treatment.forEach(function(item){
+    					treatmentHTML += "<li>" + item + "</li>";
+					});
+
+					treatmentHTML += "</ul>";
+					$("#treatment-box").html(treatmentHTML);
+
+
+					let doctorHTML = "<h3>Recommended Specialists</h3><ul>";
+
+					res.doctors.forEach(function(item){
+    					doctorHTML += "<li>" + item + "</li>";
+					});
+
+					doctorHTML += "</ul>";
+					$("#doctor-box").html(doctorHTML);
+
+                    $("#loading").hide();
+                }
 			});
 		}
 	}
@@ -196,13 +487,13 @@ function sendRequest(base64Data){
 $(document).ready(function(){
 	$("#loading").hide();
 
-	$('#send').click(function(evt){
-		sendRequest(base_data);
-    });
+	$('#predict-btn').click(function(evt){
+    	sendRequest(base_data);
+	});
 
-    $('#uload').click(function(evt) {
-        $('#fileinput').focus().trigger('click');
-    });
+	$('#upload-btn').click(function(evt){
+    	$('#fileinput').focus().trigger('click');
+	});
 	$("#fileinput").change(function(){
 		if (this.files && this.files[0]){
 			var reader = new FileReader();
@@ -222,11 +513,128 @@ $(document).ready(function(){
 				img.src = url;
 				$('#photo').attr('src', url);
 				$('#photo').show();
+
+				$('#result-photo').attr('src', url);
+				$('#result-photo').show();
 				$('#video').hide();
 			}
 			reader.readAsDataURL(this.files[0]);
 		}
 	});
+	});
+
+
+</script>
+-->
+<script>
+
+let base64Image = "";
+
+document.getElementById("upload-btn").addEventListener("click", function () {
+    document.getElementById("imageUpload").click();
+});
+
+
+document.getElementById("imageUpload").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function () {
+        base64Image = reader.result.split(",")[1];
+
+        // Left preview
+        const selectedImage = document.getElementById("selected-image");
+        selectedImage.src = reader.result;
+        selectedImage.style.display = "block";
+
+        // Right preview
+        const displayImage = document.getElementById("display-image");
+        displayImage.src = reader.result;
+        displayImage.style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+});
+
+
+document.getElementById("predict-btn").addEventListener("click", function () {
+
+    if (!base64Image) {
+        alert("Please upload an image first.");
+        return;
+    }
+
+    fetch("/predict", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            image: base64Image
+        })
+    })
+    .then(response => response.json())
+    .then(res => {
+
+        let reportHTML = `
+            <div class="prediction-card">
+                <div class="prediction">
+                    Prediction: ${res.prediction}
+                </div>
+
+                <div class="confidence">
+                    Confidence: ${res.confidence}%
+                </div>
+            </div>
+        `;
+
+        document.getElementById("report-content").innerHTML = reportHTML;
+
+
+        // Treatment Suggestions
+        let treatmentHTML = `
+            <h4 class="section-title">Treatment Suggestions</h4>
+            <ul>
+        `;
+
+        res.treatment.forEach(function(item){
+            treatmentHTML += "<li>" + item + "</li>";
+        });
+
+        treatmentHTML += "</ul>";
+
+        document.getElementById("treatment-box").innerHTML = treatmentHTML;
+
+
+        // Doctor Recommendations
+        let doctorHTML = `
+            <h4 class="section-title">Recommended Specialists</h4>
+            <ul>
+        `;
+
+        res.doctors.forEach(function(item){
+            doctorHTML += "<li>" + item + "</li>";
+        });
+
+        doctorHTML += "</ul>";
+
+        document.getElementById("doctor-box").innerHTML = doctorHTML;
+
+
+        // PDF Download
+        const downloadBtn = document.getElementById("download-report");
+        downloadBtn.href = "/reports/" + res.report_path.split("/").pop();
+        downloadBtn.style.display = "block";
+
+    })
+    .catch(error => {
+        console.log(error);
+        alert("Prediction failed.");
+    });
+
 });
 
 </script>

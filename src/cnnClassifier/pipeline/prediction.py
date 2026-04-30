@@ -4,27 +4,40 @@ from tensorflow.keras.preprocessing import image
 import os
 
 
-
 class PredictionPipeline:
-    def __init__(self,filename):
-        self.filename =filename
+    def __init__(self, filename):
+        self.filename = filename
 
-
-    
     def predict(self):
-        # load model
+        # Load model
         model = load_model(os.path.join("model", "model.h5"))
 
+        # Load and preprocess image
         imagename = self.filename
-        test_image = image.load_img(imagename, target_size = (224,224))
+        test_image = image.load_img(imagename, target_size=(224, 224))
         test_image = image.img_to_array(test_image)
-        test_image = np.expand_dims(test_image, axis = 0)
-        result = np.argmax(model.predict(test_image), axis=1)
-        print(result)
+        test_image = test_image / 255.0
+        test_image = np.expand_dims(test_image, axis=0) 
 
+        # Prediction
+        preds = model.predict(test_image)
+        print("RAW PRED:", preds)
+
+        # Get class
+        result = np.argmax(preds, axis=1)
+        print("CLASS:", result)
+
+        # Get confidence score
+        confidence = np.max(preds) * 100
+        confidence = round(float(confidence), 2)
+
+        # Final label
         if result[0] == 1:
-            prediction = 'Tumor'
-            return [{ "image" : prediction}]
+            prediction = "Tumor"
         else:
-            prediction = 'Normal'
-            return [{ "image" : prediction}]
+            prediction = "Normal"
+
+        return [{
+            "image": prediction,
+            "confidence": confidence
+        }]
